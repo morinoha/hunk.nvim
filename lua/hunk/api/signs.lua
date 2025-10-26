@@ -18,10 +18,6 @@ local M = {
       name = "HunkLineRightDeselected",
       hl = "HunkSignDeselected",
     },
-    partially_selected = {
-      name = "HunkLinePartiallySelected",
-      hl = "HunkSignPartiallySelected",
-    },
   },
 }
 
@@ -59,11 +55,6 @@ function M.define_signs()
       name = M.signs.right_deselected.name,
       text = config.icons.right.deselected,
       texthl = M.signs.right_deselected.hl,
-    },
-    {
-      name = M.signs.partially_selected.name,
-      text = config.icons.partially_selected,
-      texthl = M.signs.partially_selected.hl,
     },
   })
 end

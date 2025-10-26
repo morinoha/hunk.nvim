@@ -49,10 +49,6 @@ local M = {
       selected = "󰐖",
       deselected = "󰜄",
     },
-    partially_selected = "󰛲",
-
-    folder_open = "",
-    folder_closed = "",
 
     tree = {
       selected = "󰄲",
