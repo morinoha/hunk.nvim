@@ -41,12 +41,27 @@ local M = {
   },
 
   icons = {
-    selected = "󰡖",
-    deselected = "",
+    left = {
+      selected = "󰍵",
+      deselected = "󰛲",
+    },
+    right = {
+      selected = "󰐖",
+      deselected = "󰜄",
+    },
     partially_selected = "󰛲",
 
-    folder_open = "",
-    folder_closed = "",
+    folder_open = "",
+    folder_closed = "",
+
+    tree = {
+      selected = "󰄲",
+      deselected = "󰄱",
+      partially_selected = "󰛲",
+
+      folder_open = "",
+      folder_closed = "",
+    },
   },
 
   hooks = {
