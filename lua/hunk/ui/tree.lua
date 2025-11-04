@@ -141,7 +141,7 @@ local function get_dir_icon(node)
   end
 
   if state == "partial" then
-    return config.icons.partially_selected
+    return config.icons.tree.partially_selected
   end
 
   return config.icons.deselected
@@ -153,7 +153,7 @@ local function get_file_icon(change)
   end
 
   if utils.any_lines_selected(change) then
-    return config.icons.partially_selected
+    return config.icons.tree.partially_selected
   end
 
   return config.icons.deselected
@@ -185,16 +185,18 @@ function M.create(opts)
       local selection_icon
       if node.type == "dir" then
         selection_icon = get_dir_icon(node)
-      else
+      elseif node.type == "file" then
         selection_icon = get_file_icon(node.change)
       end
 
-      line:append(selection_icon .. " ", "HunkTreeSelectionIcon")
+      if selection_icon then
+        line:append(selection_icon .. " ", "HunkTreeSelectionIcon")
+      end
 
       if node.type == "dir" then
-        local icon = config.icons.folder_closed
+        local icon = config.icons.tree.folder_closed
         if node:is_expanded() then
-          icon = config.icons.folder_open
+          icon = config.icons.tree.folder_open
         end
         line:append(icon .. " ", "HunkTreeDirIcon")
       end
